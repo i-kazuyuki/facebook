@@ -1,5 +1,7 @@
 <h1>Topics#index</h1>
 
+<p><%= notice %></p>
+
 <%= form_for(@topic) do |f| %>
   <%= f.label :content %>
   <%= f.text_field :content %>
@@ -9,4 +11,6 @@
 
 <% @topics.each do |topic| %>
   <p><%= topic.content %></p>
+  <%= link_to "編集", edit_topic_path(topic.id) %>
+  <%= link_to "削除", topic_path(topic.id), method: :delete, data: {confirm: '本当に削除していいですか？'} %>
 <% end %>

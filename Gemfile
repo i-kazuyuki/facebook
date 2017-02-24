@@ -45,3 +45,5 @@ end
 
 #bootstrapのデザイン
 gem 'twitter-bootstrap-rails'
+#
+gem 'jquery-turbolinks'

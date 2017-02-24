@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+
+  root'top#index'
+
   resources :topics, only: [:index, :new, :create, :edit, :update, :destroy]
 
   # The priority is based upon order of creation: first created -> highest priority.

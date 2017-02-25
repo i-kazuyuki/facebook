@@ -14,6 +14,8 @@ class TopicsController < ApplicationController
 
   def create
     @topic = Topic.new(topics_params)
+    # user_idを代入する
+    @topic.user_id = current_user.id
     # バリデーションが成功したか失敗したかによって、処理を分岐
     if @topic.save
       # 一覧画面へ遷移して"投稿しました"とメッセージを表示

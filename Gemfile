@@ -63,3 +63,5 @@ gem 'omniauth-facebook'
 #image uploader
 gem 'carrierwave'
 gem 'rmagick'
+# s3に保存させるためのgem
+gem 'fog'

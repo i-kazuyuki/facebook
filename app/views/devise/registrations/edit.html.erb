@@ -3,7 +3,7 @@
     <h2>マイページ</h2>
 
     <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-      <%= devise_error_messages! %>
+      <%= f.error_messages! %>
 
       <div class="field">
         <%= profile_img(@user) if profile_img(@user) %>

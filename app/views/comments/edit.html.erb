@@ -1,0 +1,15 @@
+<div class="container">
+  <div class="comment-edit col-md-6 col-md-offset-3 col-sm-10 col-sm-offset-1">
+    <div class="row">
+      <%= form_for([@topic, @comment], remote: true) do |f| %>
+      <%= f.hidden_field :topic_id %>
+        <div class="field">
+          <%= f.text_field :content, placeholder: "内容", class: "form-control"  %>
+        </div>
+        <div class="actions">
+          <%= f.submit %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

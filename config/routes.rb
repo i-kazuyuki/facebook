@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  get 'relationships/create'
+
+  get 'relationships/destroy'
+
   root'top#index'
 
   resources :topics do
@@ -14,6 +18,10 @@ Rails.application.routes.draw do
     omniauth_callbacks: "users/omniauth_callbacks",
     registrations: "users/registrations"
   }
+
+  resources :users, only: [:index]
+
+  resources :relationships, only: [:create, :destroy]
 
   if Rails.env.development?
     mount LetterOpenerWeb::Engine, at: "/letter_opener"

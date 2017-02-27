@@ -18,6 +18,11 @@ class ApplicationController < ActionController::Base
     @notifications_count = Notification.where(user_id: current_user.id).where(read: false).count
   end
 
+  # ログインした後のリダイレクト先の変更
+  def after_sign_in_path_for(resource)
+    topics_path
+  end
+
   private
 
     #deviseのストロングパラメーターにカラム追加するメソッドを定義

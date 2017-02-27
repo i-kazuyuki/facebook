@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'notifications/index'
+
   root'top#index'
 
   resources :topics do

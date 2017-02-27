@@ -79,3 +79,5 @@ gem 'fog'
 gem 'dotenv-rails'
 gem 'unicorn'
 gem 'therubyracer', platforms: :ruby
+# プッシュ通知
+gem 'pusher'

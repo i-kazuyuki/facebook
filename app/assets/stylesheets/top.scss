@@ -14,6 +14,20 @@ header {
   margin-top: 10px;
 }
 
+.btn-primary-outline {
+  height: 35px;
+  background-color: white;
+  font-size: xx-large;
+  font-family: Tahoma;
+  color: #3B5998;
+  padding: 0px 7px 0px 18px;
+  margin-top: 5px;
+  border: 0;
+  &:hover {
+    color: #3B5998;
+  }
+}
+
 .navbar-default {
     border: 0;
 }

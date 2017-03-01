@@ -10,13 +10,6 @@
       <% end %>
     </div>
 
-
-<%= current_user.name %>
-
-
-
-
-
     <% @topics.each do |topic| %>
     <div class="row">
       <p><%= profile_img(topic.user) %><b><%= topic.user.name %></b></p>

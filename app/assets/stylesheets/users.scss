@@ -1,3 +1,33 @@
 // Place all the styles related to the users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.friends {
+  font-size: medium;
+  padding: 15px;
+  background-color: white;
+  text-align: left;
+  margin-bottom: 0;
+}
+.row-friends {
+  background-color: white;
+  border-bottom: 1px solid #ccc;
+  padding: 5px 15px 10px 15px;
+  text-align: left;
+  word-wrap: break-word;
+  img {
+    width: 50px;
+    height: 50px;
+  }
+}
+
+
+.li-friends {
+  padding-top: 10px;
+  padding-right: 20px;
+}
+
+.profile {
+  width: 50px;
+  height: 50px;
+}

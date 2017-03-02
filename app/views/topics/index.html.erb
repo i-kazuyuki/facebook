@@ -3,7 +3,7 @@
     <p><%= notice %></p>
     <div class="row">
       <%= form_for(@topic) do |f| %>
-        <%= f.label :✏️投稿を作成 %>
+        <i class="fa fa-pencil"></i><%= f.label :投稿を作成 %>
         <%= f.text_field :content, class: 'form-control', placeholder:"今なにしてる？"  %>
         <br>
         <%= f.submit '投稿する', class: 'btn btn-primary btn-block' %>

@@ -1,10 +1,16 @@
 <div class="container">
-    <h2>ユーザー詳細</h2>
-      <p><%= profile_img(@user) %></p>
-      <p>名前:<%= @user.name %></p>
-      <p>メール:<%= @user.email %></p>
+  <header class="user-show">
+    <section class="user-show-profile-img">
+      <%= profile_img(@user) %>
+    </section>
+    <section class="main-header">
+      <p><%= @user.name %></p>
+    </section>
+  </header>
 
       <%= render 'followed' %>
       <%= render 'followers' %>
-      <%= link_to "ユーザー一覧へ戻る", :back %>
+
+
+
 </div>

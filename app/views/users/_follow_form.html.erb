@@ -2,11 +2,13 @@
   <% unless current_user.following?(user) %>
     <%= form_for(current_user.relationships.build(followed_id: user.id), remote: true) do |f| %>
       <%= f.hidden_field :followed_id %>
-      <%= f.submit "👥+友達になる", class: "btn btn-sm btn-primary" %>
+        <%= button_tag( class: "btn btn-sm btn-primary") do %>
+          <%= content_tag :span, "+友達になる", class: "fa fa-user" %>
+        <% end %>
+      <% end %>
+      <% else %>
+        <%= form_for(current_user.relationships.find_by(followed_id: user.id), html: { method: :delete }, remote: true) do |f| %>
+        <%= f.submit "友達から削除", class: "btn btn-sm" %>
+      <% end %>
     <% end %>
-  <% else %>
-    <%= form_for(current_user.relationships.find_by(followed_id: user.id), html: { method: :delete }, remote: true) do |f| %>
-      <%= f.submit "友達から削除", class: "btn btn-sm" %>
-    <% end %>
-  <% end %>
 </div>

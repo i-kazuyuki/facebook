@@ -16,11 +16,10 @@
   text-align: left;
   word-wrap: break-word;
   img {
-    width: 50px;
-    height: 50px;
+    width: 80px;
+    height: 80px;
   }
 }
-
 
 .li-friends {
   padding-top: 10px;
@@ -30,4 +29,33 @@
 .profile {
   width: 50px;
   height: 50px;
+}
+
+.user-show {
+  width: 100%;
+  margin-bottom: 50px;
+  background-color: #1DA1F2;
+  height: 190px;
+  color: white;
+  font-size: large;
+}
+
+.user-show-profile-img {
+  margin: 70px 30px 30px 30px;
+  float: left;
+  img {
+    width: 150px;
+    height: 150px;
+  }
+}
+
+.main-header {
+  float: left;
+  font-size: x-large;
+  margin-top: 150px;
+  list-style: none;
+  display: block;
+  text-decoration: none;
+  font: white;
+  position: relative;
 }

@@ -6,11 +6,27 @@
     <section class="main-header">
       <p><%= @user.name %></p>
     </section>
+
+
+
+
   </header>
+
+
 
       <%= render 'followed' %>
       <%= render 'followers' %>
 
+      <% @user.topics.each do |topic| %>
+      <div class="row">
+        <p><%= profile_img(topic.user) %><b><%= topic.user.name %></b></p>
+        <%= link_to topic_path(topic) do %>
+          <h4><strong><%= topic.content %></strong></h4>
+        <% end %>
+        <%= link_to "編集", edit_topic_path(topic.id) %>
+        <%= link_to "削除", topic_path(topic.id), method: :delete, data: {confirm: '本当に削除していいですか？'} %>
+      </div>
+      <% end %>
 
 
 </div>

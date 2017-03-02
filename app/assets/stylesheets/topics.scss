@@ -15,3 +15,51 @@ input[type="submit"].btn-block{
 .container{
   padding-bottom: 85px;
 }
+
+.topic-btn {
+  float: right;
+}
+
+.topics-top {
+  background-color: #F6F7F9;
+  margin: 0;
+  padding: 5px;
+}
+
+.row-topic {
+  margin-bottom: 40px;
+  padding: 20px;
+  text-align: left;
+  word-wrap: break-word;
+}
+
+.row-topic-top {
+  background-color: white;
+  margin-bottom: 15px;
+  padding: 20px;
+  text-align: left;
+  word-wrap: break-word;
+  img {
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+  }
+}
+
+.container-fluid {
+  padding: 0;
+}
+
+.navbar-default-topic {
+  border: 0;
+  background-color: white;
+  color: black;
+  .dropdown {
+    text-align: right;
+  }
+}
+
+.fa-topic:before {
+	color: #BFBFBF ;
+  padding: 10px;
+}

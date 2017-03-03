@@ -1,32 +1,58 @@
-<div class="container">
+<div class="users-show">
   <header class="user-show">
-    <section class="user-show-profile-img">
-      <%= profile_img(@user) %>
-    </section>
     <section class="main-header">
-      <p><%= @user.name %></p>
+      <section class="user-show-profile-img">
+        <%= profile_img(@user) %>
+      </section>
+      <ul>
+        <li class="li-left">  <p><%= @user.name %></p></li>
+        <li class="li-right">
+          <%= button_tag( class: "btn btn-sm btn-bluegrey100") do %>
+            <%= link_to 'メッセージ', conversations_path(sender_id: current_user.id, recipient_id: @user.id), method: 'post', class: "fa fa-commenting" %>
+          <% end %>
+        </li>
+        <li class="li-right">
+          <%= render partial: 'follow_form', locals: { user: @user } if signed_in? %>
+        </li>
+      </ul>
     </section>
-
-
-
-
   </header>
+</div>
 
+<!-- mainBox -->
+<div class="user-main">
+  <div class="mainBox">
+    <% @user.topics.each do |topic| %>
+    <div class="row-topic-top">
+      <nav class="navbar navbar-default-topic">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <%= profile_img(topic.user) %><b><%= topic.user.name %></b>
+          </div>
+          <ul class="nav navbar-nav navbar-right">
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-caret-down fa-1x fa-topic"></i></a>
+            <% if user_signed_in? %>
+              <ul class="dropdown-menu">
+                <li><%= link_to "編集", edit_topic_path(topic.id) %></li>
+                <li><%= link_to "削除", topic_path(topic.id), method: :delete, data: {confirm: '本当に削除していいですか？'} %></li>
+              </ul>
+            <% end %>
+            </li>
+          </ul>
+        </div><!-- /.container-fluid -->
+      </nav>
+      <p><%= topic.content %></p>
+      <p><%= link_to "コメントする", topic_path(topic), class: "fa fa-pencil-square-o" %></p>
+    </div>
+    <% end %>
+  </div>
+</div>
 
-
-      <%= render 'followed' %>
-      <%= render 'followers' %>
-
-      <% @user.topics.each do |topic| %>
-      <div class="row">
-        <p><%= profile_img(topic.user) %><b><%= topic.user.name %></b></p>
-        <%= link_to topic_path(topic) do %>
-          <h4><strong><%= topic.content %></strong></h4>
-        <% end %>
-        <%= link_to "編集", edit_topic_path(topic.id) %>
-        <%= link_to "削除", topic_path(topic.id), method: :delete, data: {confirm: '本当に削除していいですか？'} %>
-      </div>
-      <% end %>
-
-
+<!-- subBox -->
+<div class="subBox">
+  <ul>
+    <li><%= render 'followed' %></li>
+    <li><%= render 'followers' %></li>
+  </ul>
 </div>

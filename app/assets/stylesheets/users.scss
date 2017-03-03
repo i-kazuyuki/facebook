@@ -32,12 +32,14 @@
 }
 
 .user-show {
-  width: 100%;
+  width: 1000px;
   margin-bottom: 50px;
   background-color: #1DA1F2;
   height: 190px;
   color: white;
   font-size: large;
+  margin-right: auto;
+  margin-left: auto;
 }
 
 .user-show-profile-img {
@@ -50,12 +52,95 @@
 }
 
 .main-header {
-  float: left;
   font-size: x-large;
-  margin-top: 150px;
   list-style: none;
   display: block;
   text-decoration: none;
   font: white;
   position: relative;
+  ul {
+    padding-top: 150px;
+  }
+  li {
+    display: inline-block;
+  }
+}
+
+.li-left {
+  float: left;
+}
+
+.li-right {
+  float: right;
+  padding-right: 20px;
+}
+
+.users-show {
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.user-main {
+  width: 1400px;
+  background-color: black;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.subBox  {
+    float: left;
+    width: 300px;
+    background-color: white;
+    padding: 30px 5px;
+    margin-left: 80px;
+}
+
+.mainBox {
+    float: right;
+    width: 600px;
+    background-color: #E9EBEE;
+    padding: 10px 5px;
+    margin-right: 350px;
+}
+
+.follow-title {
+  font-size: large;
+  text-align: left;
+}
+
+.fa-green:before {
+  color: #A5D950;
+}
+
+.fa-pink:before {
+  color: #F50E6B;
+}
+
+.follow {
+  li {
+    display: inline-block;
+  }
+}
+
+ul {
+  list-style: none;
+}
+
+.follow-user-name {
+  font-size: x-small;
+  margin: 0;
+}
+
+.follow-user-img {
+  margin: 0;
+  img {
+    width: 80px;
+    height: 80px;
+  }
+}
+
+.count {
+  color: #90949C;
+  font-size: small;
 }

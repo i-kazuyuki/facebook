@@ -1,10 +1,11 @@
-<div class="container">
-  <h3 class="left">フォロー中</h3>
-  <% @user.followed_users.each do |user| %>
-    <div class="container-child col-md-2 col-sm-4 col-xs-6 ">
-      <p><%= profile_img(user)%></p>
-      <p><%= user.name %></p>
-      <p><%= render 'follow_form', user: user %></p>
-    </div>
-  <% end %>
+<div class="follow">
+  <h3 class="follow-title"><i class="fa fa-check fa-green"></i>フォロー中<span class="count">・<%= @user.followed_users.count %>人</span></h3>
+  <ul>
+    <% @user.followed_users.each do |user| %>
+    <li>
+      <p class="follow-user-img"><%= profile_img(user) %></p>
+      <p class="follow-user-name"><%= link_to user.name, user %></p>
+    </li>
+    <% end %>
+  </ul>
 </div>

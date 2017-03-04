@@ -21,6 +21,12 @@
         <%= f.text_field :name, class: "form-control" %>
       </div>
 
+      <!-- 自己紹介入力用のフィールドを追加 -->
+      <div class="field">
+        <%= f.label :自己紹介 %><br />
+        <%= f.text_area :introduction, class: "form-control", placeholder:"自己紹介を入力してください" %>
+      </div>
+
 
       <% if @user.provider.blank? %>
 

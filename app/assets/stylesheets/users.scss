@@ -90,18 +90,26 @@
 
 .subBox  {
     float: left;
-    width: 300px;
-    background-color: white;
-    padding: 30px 5px;
+    width: 330px;
+    height: auto;
+    background-color: #E9EBEE;
     margin-left: 80px;
+    margin-bottom: 70px;
+    li {
+      margin-bottom: 20px;
+      padding: 10px;
+      background-color: white;
+    }
 }
 
 .mainBox {
     float: right;
+    height: auto;
     width: 600px;
     background-color: #E9EBEE;
     padding: 10px 5px;
     margin-right: 350px;
+    margin-bottom: 70px;
 }
 
 .follow-title {
@@ -113,8 +121,16 @@
   color: #A5D950;
 }
 
+.fa-navy:before {
+  color: #4267B2;
+}
+
 .fa-pink:before {
   color: #F50E6B;
+}
+
+.introduction {
+  text-align: left;
 }
 
 .follow {

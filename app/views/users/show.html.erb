@@ -52,6 +52,9 @@
 <!-- subBox -->
 <div class="subBox">
   <ul>
+    <li><h3 class="follow-title"><i class="fa fa-file-text fa-navy"></i>自己紹介</h3>
+      <p class="introduction"><%= @user.introduction %></p>
+    </li>
     <li><%= render 'followed' %></li>
     <li><%= render 'followers' %></li>
   </ul>

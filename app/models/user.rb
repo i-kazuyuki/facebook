@@ -38,8 +38,6 @@ class User < ActiveRecord::Base
   # carrierwave用の設定
   mount_uploader :avatar, AvatarUploader #deviseの設定配下
 
-  has_many :pictures
-
   # Facebookの設定
   def self.find_for_facebook_oauth(auth, signed_in_resource=nil)
     user = User.find_by(email: auth.info.email)

@@ -47,7 +47,7 @@
           <ul class="nav navbar-nav navbar-right">
             <% if user_signed_in? %>
               <li><%= link_to edit_user_registration_path do %>
-                <%= image_tag (current_user.avatar), size: '20x20' %>
+                <%= profile_img(current_user) %>
                 <%= current_user.name %>
               </li>
               <% end %>

@@ -33,7 +33,9 @@
           </ul>
         </div><!-- /.container-fluid -->
       </nav>
-      <p><%= topic.content %></p>
+      <%= link_to topic_path(topic) do %>
+        <p class="content"><%= topic.content %></p>
+      <% end %>
       <p><%= link_to "コメントする", topic_path(topic), class: "fa fa-pencil-square-o" %></p>
     </div>
     <% end %>

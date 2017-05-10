@@ -14,14 +14,14 @@ class CommentsController < ApplicationController
         format.html { redirect_to topic_path(@topic), notice: 'コメントを投稿しました。' }
         format.json { render :show, status: :created, location: @comment }
         format.js { render :index }
-        # ブログにコメントが作成された際にポップアップを表示させる
+        # コメントが作成された際にポップアップを表示させる
         # 自分が自分のブログにコメントを投稿した際は、通知がこないようにする
         unless @comment.topic.user_id == current_user.id
           Pusher.trigger("user_#{@comment.topic.user_id}_channel", 'comment_created', {
             message: 'あなたの作成したトピックにコメントが付きました'
           })
         end
-        #
+        # pusherを使って通知件数をリアルタイムで更新させる
         Pusher.trigger("user_#{@comment.topic.user_id}_channel", 'notification_created', {
           unread_counts: Notification.where(user_id: @comment.topic.user.id, read: false).count
         })

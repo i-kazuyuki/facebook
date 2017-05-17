@@ -51,7 +51,6 @@ group :development, :test do
   #
   gem 'pry-rails'
   gem 'better_errors'
-  gem 'faker'
 end
 
 group :development do
@@ -82,3 +81,4 @@ gem 'unicorn'
 gem 'therubyracer', platforms: :ruby
 # プッシュ通知
 gem 'pusher'
+gem 'faker'
